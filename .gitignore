@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.log
+tmp/
+qa/
+reference/
+AGENTS.md
+design-qa.md
+preview-full.jpg
+public/assets/agentpay-concept.*
+public/assets/hni-wallet-tracker-illustration.png
+public/assets/neural-networks-learning.png
+public/assets/virtual-pet-research.png
+scripts/prepare-project-images.ps1

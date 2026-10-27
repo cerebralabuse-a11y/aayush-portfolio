@@ -1,0 +1,285 @@
+.profile-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 35px;
+  margin-top: 30px;
+}
+.profile-highlights a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.profile-highlights .icon { color: var(--accent); }
+.profile-highlights small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  margin-top: 3px;
+}
+.profile-highlights a:hover { color: var(--accent); }
+
+.project-grid > .project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  overflow: hidden;
+  min-height: 0;
+}
+.project-image { position: relative; margin: 0; background: #a7b2c2; }
+.project-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.project-image figcaption {
+  position: absolute;
+  right: 12px;
+  bottom: 11px;
+  padding: 4px 8px;
+  background: #1e1e2ee8;
+  border: 1px solid #50536b;
+  color: #cdd6f4;
+  font-size: 9px;
+  line-height: 1.5;
+  border-radius: 4px;
+}
+.project-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px 28px;
+}
+.project-content > .card-heading { width: 100%; }
+.project-content > p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+.project-content > .tags { margin-top: auto; }
+.project-content .paper-link { margin-top: auto; }
+.repository-link { margin-top: 18px; }
+.project-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; margin-top: 20px; }
+.project-actions:empty { display: none; }
+.aqhigh-card .project-image { background: #153b46; }
+.aqhigh-card .project-image img { object-fit: contain; }
+.agentpay-card .project-image { background: #101012; }
+.agentpay-card .project-image img, .apex-card .project-image img { object-fit: contain; }
+@media (min-width: 1101px) {
+  .featured-projects { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .featured-projects .project-content { padding: 22px; }
+  .featured-projects .project-card h3 { font-size: 22px; }
+  .featured-projects .card-heading { flex-wrap: wrap; gap: 8px; }
+  .featured-projects .project-content > p { font-size: 14px; }
+}
+@media (max-width: 760px) {
+  .featured-projects { grid-template-columns: 1fr; }
+}
+.project-grid > .learning-card {
+  display: grid;
+  grid-template-columns: 44% minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0;
+}
+.learning-card .project-image { align-self: stretch; display: flex; align-items: center; background: #60738d; }
+.learning-card .project-image img { height: auto; min-height: 0; }
+.learning-card .project-content { justify-content: center; }
+.learning-card .card-heading { flex-wrap: wrap; gap: 13px; margin-bottom: 17px; }
+.learning-card .project-content > p { font-size: 14px; margin-bottom: 22px; }
+.learning-card .project-content > .tags { margin-top: 0; }
+.learning-card .expanded-copy { margin-top: 22px; }
+
+.background { padding-top: 55px; }
+.background-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.background-card {
+  min-width: 0;
+  border: 1px solid var(--subtle-line);
+  border-radius: 9px;
+  padding: 27px 28px;
+}
+.background-card h2 {
+  font-size: 21px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  gap: 13px;
+  margin: 0 0 27px;
+}
+.background-entry { padding: 0 0 23px; }
+.background-entry + .background-entry {
+  border-top: 1px solid var(--subtle-line);
+  padding-top: 23px;
+}
+.entry-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: .25px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.small-status {
+  color: var(--muted);
+  font-size: 9px;
+  padding: 3px 7px;
+  background: var(--pill);
+  border: 1px solid var(--pill-line);
+  border-radius: 4px;
+  letter-spacing: 0;
+}
+.background-card h3 {
+  margin: 0 0 9px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+.background-entry > p {
+  margin: 0 0 15px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+}
+.entry-foot {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 7px 15px;
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.entry-foot > span + span { color: var(--accent); }
+.experience-card { display: flex; flex-direction: column; }
+.experience-card .employer { font-size: 14px; color: var(--text); }
+.experience-card .experience-summary { font-size: 13px; line-height: 1.9; margin: 22px 0; }
+.experience-note {
+  margin-top: auto;
+  border-top: 1px solid var(--subtle-line);
+  padding-top: 21px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: var(--accent);
+}
+.experience-note p { color: var(--muted); font-size: 11px; line-height: 1.9; margin: 0; }
+.school-details { border-top: 1px solid var(--subtle-line); }
+.school-details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 17px;
+  font-size: 11px;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+}
+.school-details summary::-webkit-details-marker { display: none; }
+.school-details summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.school-details[open] summary > .icon { transform: rotate(180deg); }
+.school-content { padding-top: 17px; }
+.school-content strong { font-size: 11px; font-weight: 500; }
+.school-content p { margin: 7px 0 0; font-size: 10px; color: var(--muted); }
+.skill-group + .skill-group { border-top: 1px solid var(--subtle-line); padding-top: 19px; margin-top: 19px; }
+.skill-group h3 { font-size: 13px; margin-bottom: 8px; }
+.skill-group p { margin: 0; font-size: 11px; color: var(--muted); line-height: 1.95; }
+.certificate { display: flex; align-items: flex-start; gap: 21px; }
+.certificate + .certificate { border-top: 1px solid var(--subtle-line); padding-top: 20px; margin-top: 20px; }
+.certificate > span { font-size: 10px; color: var(--accent); padding-top: 3px; }
+.certificate h3 { font-size: 13px; margin-bottom: 5px; }
+.certificate p { font-size: 11px; color: var(--muted); margin: 0; line-height: 1.8; }
+.certificate small { display: block; font-size: 10px; line-height: 1.8; color: var(--muted); margin-top: 7px; }
+.background + .contact { margin-top: 45px; }
+
+@media (max-width: 1100px) {
+  .project-content { padding: 22px; }
+  .project-content > p { font-size: 14px; }
+  .learning-card .project-image img { min-height: 0; }
+  .background-card { padding: 24px; }
+  .background-card h2 { font-size: 19px; gap: 11px; }
+  .background-card h3 { font-size: 14px; }
+  .certificate { gap: 15px; }
+}
+@media (max-width: 760px) {
+  .profile-highlights { margin-top: 27px; gap: 18px 26px; }
+  .profile-highlights a { font-size: 10px; gap: 9px; }
+  .profile-highlights small { font-size: 8px; }
+  .project-content { padding: 20px; }
+  .project-content > .card-heading { align-items: flex-start; }
+  .project-content > p { font-size: 13px; }
+  .learning-card .project-content > p { font-size: 13px; }
+  .project-image figcaption { font-size: 8px; right: 9px; bottom: 9px; }
+  .background { padding-top: 40px; }
+  .background-grid { gap: 19px; }
+  .background-card { padding: 22px; }
+  .background-card h2 { font-size: 17px; gap: 10px; margin-bottom: 22px; }
+  .background-card h2 svg { width: 20px; height: 20px; }
+  .background-card h3 { font-size: 13px; }
+  .background-entry > p { font-size: 11px; }
+  .experience-card .experience-summary { font-size: 12px; }
+  .entry-meta { font-size: 9px; }
+  .entry-foot { font-size: 9px; }
+  .small-status { font-size: 8px; }
+  .skill-group p { font-size: 10px; }
+  .certificate { gap: 12px; }
+  .certificate h3 { font-size: 12px; }
+  .certificate p { font-size: 10px; }
+}
+@media (max-width: 600px) {
+  .background-grid { grid-template-columns: 1fr; }
+  .background-card h2 { font-size: 20px; margin-bottom: 24px; }
+  .background-card h3 { font-size: 14px; }
+  .background-entry > p { font-size: 12px; }
+  .entry-meta { font-size: 10px; }
+  .entry-foot { font-size: 10px; }
+  .small-status { font-size: 9px; }
+  .skill-group p { font-size: 12px; line-height: 1.9; }
+  .skill-group h3 { font-size: 14px; }
+  .experience-card .experience-summary { font-size: 13px; }
+  .experience-note { margin-top: 12px; }
+  .experience-note p { font-size: 12px; }
+  .certificate { gap: 20px; }
+  .certificate h3 { font-size: 13px; }
+  .certificate p { font-size: 12px; }
+  .certificate small { font-size: 11px; }
+}
+@media (max-width: 560px) {
+  .profile-highlights { gap: 16px 24px; }
+  .profile-highlights a { font-size: 10px; }
+  .profile-highlights .icon svg { width: 16px; height: 16px; }
+  .project-grid > .learning-card { display: flex; flex-direction: column; }
+  .learning-card .project-image img { height: auto; min-height: 0; }
+  .project-content { padding: 20px; }
+  .project-content > p, .learning-card .project-content > p { font-size: 14px; }
+  .project-content > .tags { margin-top: 0; }
+  .project-content .paper-link { margin-top: 0; }
+  .project-content .badge { font-size: 9px; }
+  .project-grid .learning-card .card-heading { margin-bottom: 13px; }
+  .background { padding-top: 36px; }
+  .background-card { padding: 23px 21px; }
+  .background + .contact { margin-top: 33px; }
+}
+@media (max-width: 360px) {
+  .profile-highlights { gap: 15px; }
+  .profile-highlights a { font-size: 9px; }
+  .profile-highlights small { font-size: 8px; }
+  .project-content { padding: 18px; }
+  .project-content .badge { font-size: 8px; }
+  .background-card { padding: 21px 18px; }
+  .background-card h2 { font-size: 18px; }
+  .entry-meta { font-size: 9px; }
+  .certificate { gap: 15px; }
+}
