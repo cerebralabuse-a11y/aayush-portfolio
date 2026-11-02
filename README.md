@@ -23,6 +23,14 @@ npm test
 
 The build produces `dist/client` plus a supporting Sites worker package. A static host needs an SPA rewrite to `index.html` for `/projects/` and `/about/`. Supply both Vite environment variables when building. Repository publication does not deploy the website.
 
+## Vercel deployment
+
+Import this repository with the repository root as the Root Directory (`./`). The included `vercel.json` selects Vite, runs `npm run build`, serves `dist/client`, and rewrites page requests to `index.html` so direct visits to `/projects/` and `/about/` work.
+
+Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in the Vercel project's environment variables before building to enable the shared counter and contact form. Use a publishable key only. Environment changes require a new deployment.
+
+If an existing deployment shows Vercel's `404: NOT_FOUND`, deploy the latest commit with this configuration. Serving `dist` or `public` instead of `dist/client` misses the built app's `index.html`.
+
 ## Supabase setup
 
 Apply `supabase/migrations/20261027083000_portfolio.sql` to a fresh project through the Supabase SQL editor or CLI. It creates:
