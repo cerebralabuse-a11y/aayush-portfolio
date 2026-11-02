@@ -11,6 +11,7 @@ const email = 'aayushsonias2005@gmail.com';
 const projectDetails = {
   apex: {
     title: 'APEX GP', status: 'In development',
+    playUrl: 'https://apex-gp-kohl.vercel.app/',
     image: '/assets/apex-gp-race.png',
     imageWidth: 899, imageHeight: 524,
     alt: 'APEX GP gameplay capture showing an open-wheel car on the Jewel of Navi Mumbai circuit, with a lakeside setting, lap display, speedometer, and circuit minimap.',
@@ -246,7 +247,7 @@ function Projects({ detailed, onSelect }) {
           <div className="card-heading"><h3><button className="project-title" onClick={() => onSelect(id)} aria-label={`Read about ${project.title}`}>{project.title}</button></h3><span className="badge">{project.status}</span></div>
           <p>{project.summary}</p>
           <Tags items={project.tags} />
-          <div className="project-actions"><button className="text-link" onClick={() => onSelect(id)}>Project details<Icon name="arrow-right" size={16} /></button>{project.repository && <a className="text-link" href={project.repository} aria-label={`View ${project.title} source on GitHub`}><Icon name="github" size={16} />View source</a>}</div>
+          <div className="project-actions">{project.playUrl && <a className="text-link" href={project.playUrl} target="_blank" rel="noopener noreferrer" aria-label={`Play ${project.title} (opens in a new tab)`}><Icon name="play" size={16} />Play game<Icon name="arrow-up-right" size={15} /></a>}<button className="text-link" onClick={() => onSelect(id)}>Project details<Icon name="arrow-right" size={16} /></button>{project.repository && <a className="text-link" href={project.repository} aria-label={`View ${project.title} source on GitHub`}><Icon name="github" size={16} />View source</a>}</div>
           {detailed && <div className="expanded-copy"><p>{project.paragraphs[0]}</p></div>}
         </div>
       </article>;
@@ -381,7 +382,7 @@ export function App() {
       <footer className="container"><span>© 2026 Aayush M. Soni</span><a href="#top">Back to top<Icon name="arrow-up" size={14} /></a></footer>
       <dialog ref={dialog} className="detail-dialog" aria-labelledby="dialog-title" onClose={() => setActiveDialog(null)} onClick={event => { if (event.target === event.currentTarget) dialog.current.close(); }}>
         <div className="dialog-surface"><form method="dialog"><button className="dialog-close" aria-label="Close details"><Icon name="x" size={22} /></button></form>
-          {selectedProject ? <><p className="dialog-eyebrow">{selectedProject.status}</p><h2 id="dialog-title">{selectedProject.title}</h2><p className="dialog-intro">{selectedProject.intro}</p>{selectedProject.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<Tags items={selectedProject.tags} /><div className="project-actions">{selectedProject.repository && <a className="text-link" href={selectedProject.repository} aria-label={`View ${selectedProject.title} source on GitHub`}><Icon name="github" size={16} />View source<Icon name="arrow-up-right" size={15} /></a>}{selectedProject.preview && <ProjectPreview key={selectedProject.preview} project={selectedProject} />}</div></> : null}
+          {selectedProject ? <><p className="dialog-eyebrow">{selectedProject.status}</p><h2 id="dialog-title">{selectedProject.title}</h2><p className="dialog-intro">{selectedProject.intro}</p>{selectedProject.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<Tags items={selectedProject.tags} /><div className="project-actions">{selectedProject.playUrl && <a className="text-link" href={selectedProject.playUrl} target="_blank" rel="noopener noreferrer" aria-label={`Play ${selectedProject.title} (opens in a new tab)`}><Icon name="play" size={16} />Play game<Icon name="arrow-up-right" size={15} /></a>}{selectedProject.repository && <a className="text-link" href={selectedProject.repository} aria-label={`View ${selectedProject.title} source on GitHub`}><Icon name="github" size={16} />View source<Icon name="arrow-up-right" size={15} /></a>}{selectedProject.preview && <ProjectPreview key={selectedProject.preview} project={selectedProject} />}</div></> : null}
         </div>
       </dialog>
     </div>
